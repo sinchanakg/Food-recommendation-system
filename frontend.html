@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Recommendation System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Food Recommendation System</h1>
+    <div class="filters">
+      <label for="category">Select a Category:</label>
+      <select id="category">
+        <option value="All">All</option>
+        <option value="Indian">Indian</option>
+        <option value="Italian">Italian</option>
+        <option value="Japanese">Japanese</option>
+        <option value="American">American</option>
+        <option value="Mexican">Mexican</option>
+        <option value="Healthy">Healthy</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Middle Eastern">Middle Eastern</option>
+      </select>
+      <button id="recommendBtn">Get Recommendation</button>
+    </div>
+    <div id="result">
+      <h2>Recommended Food:</h2>
+      <p id="foodName">-</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

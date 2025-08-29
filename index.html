@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Recommendation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <div class="container">
+    <h1>Food Recommendation System</h1>
+    
+    <!-- Form to input food item and select category -->
+    <form method="POST">
+      <label for="category">Select a Category:</label>
+      <select id="category" name="category">
+        <option value="All" {% if category_filter == "All" %}selected{% endif %}>All</option>
+        <option value="Italian" {% if category_filter == "Italian" %}selected{% endif %}>Italian</option>
+        <option value="Japanese" {% if category_filter == "Japanese" %}selected{% endif %}>Japanese</option>
+        <option value="American" {% if category_filter == "American" %}selected{% endif %}>American</option>
+        <option value="Mexican" {% if category_filter == "Mexican" %}selected{% endif %}>Mexican</option>
+        <option value="Healthy" {% if category_filter == "Healthy" %}selected{% endif %}>Healthy</option>
+        <option value="Dessert" {% if category_filter == "Dessert" %}selected{% endif %}>Dessert</option>
+        <option value="Breakfast" {% if category_filter == "Breakfast" %}selected{% endif %}>Breakfast</option>
+        <option value="Middle Eastern" {% if category_filter == "Middle Eastern" %}selected{% endif %}>Middle Eastern</option>
+        <option value="Indian" {% if category_filter == "Indian" %}selected{% endif %}>Indian</option>
+      </select>
+      
+      <label for="food">Enter a food item:</label>
+      <input type="text" id="food" name="food" value="{{ input_food }}" required>
+      
+      <button type="submit">Get Recommendation</button>
+    </form>
+
+    <!-- Displaying recommendations -->
+    {% if recommended_foods %}
+      <div id="result">
+        <h2>Recommended Food:</h2>
+        <ul>
+          {% for food in recommended_foods %}
+            <li>{{ food }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
