@@ -1,4 +1,4 @@
-_📌 Overview
+📌 Overview
 
 A mini project that recommends food items based on user preferences such as cuisine, ingredients, and diet. It uses simple filtering logic to provide personalized suggestions and serves as an introduction to recommendation systems.
 
